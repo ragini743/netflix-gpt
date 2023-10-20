@@ -1,6 +1,12 @@
 # netflix-gpt
-### create reactt app
+### create react app
 ### configured tailwindcss
+### header
+### routing of app
+### Login form
+### signUp form
+### Form validation
+### useRef hook
 
 
 # features

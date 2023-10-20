@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Login_background_URL } from "../utils/constant";
 import Header from "./Header";
+import { checkValidData } from "../utils/validate";
 
 const Login = ()=>{
     const [isSignInForm,setIsSignForm] = useState(true);
+    const email =useRef(null);
+    const password = useRef(null);
+  
     const toggleSignInForm = ()=>{
         setIsSignForm(!isSignInForm);
     }
-    return(
+    const handleButtonClick=() =>{
+        // validate  the form data
+        // checkValidData(email,password);
+        console.log(password)
+        console.log(email)
+    }
+        return(
 <div className="">
     <Header />
     <div className="h-full">
         <img src={Login_background_URL} className="" alt="background-logo"></img>
     </div>
 
-    <form className="bg-black text-white p-2 flex flex-col top-5 mx-[30%] left-0 right-0 md:p-10 md:w-[40%] absolute md:top-24 opacity-80">
+    <form onSubmit={(e)=>e.preventDefault} className="bg-black text-white p-2 flex flex-col top-5 mx-[30%] left-0 right-0 md:p-10 md:w-[40%] absolute md:top-24 opacity-80">
         <thead className="p-1 md:font-bold md:text-2xl md:p-2">{isSignInForm ? "Sign In" : "signUp"}</thead>
    {!isSignInForm &&
         <input type="text" placeholder="enter your name" className="border-2 border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2 rounded-sm  bg-stone-800"></input>
@@ -23,9 +33,9 @@ const Login = ()=>{
 
 
 
-        <input type="email" placeholder="Email or phone number" className="border-2 border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2 rounded-sm  bg-stone-800"></input>
-        <input type="password"placeholder="Password" className="border-2 border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2  rounded-sm bg-stone-800"></input>
-        <button type="submit" className="border-black border-1 bg-red-600 md:p-2 md:mb-4">{isSignInForm ? "Sign In" : "signUp"}</button>
+        <input ref={email} type="email" placeholder="Email or phone number" className="border-2 border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2 rounded-sm  bg-stone-800"></input>
+        <input ref={password} type="password"placeholder="Password" className="border-2 border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2  rounded-sm bg-stone-800"></input>
+        <button type="submit" className="border-black border-1 bg-red-600 md:p-2 md:mb-4"onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "signUp"}</button>
         <div className="md:mb-4 flex items-center">
         <input type="checkbox" className="md:w-5 md:h-5 md:mr-2">
             </input><label className="text-sm md:text-lg">remember me</label>
