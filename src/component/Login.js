@@ -49,6 +49,11 @@ const Login = () => {
       // If all validations pass, clear any previous error messages
       setErrorMessage(null);
   }
+  alert("your form is submitted")
+  // Clear input fields
+  if (name.current) name.current.value = "";
+  if (email.current) email.current.value = "";
+  if (password.current) password.current.value = "";
   };
   return (
     <div className="">

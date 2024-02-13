@@ -15,29 +15,5 @@ export const checkValidData = (email,password) =>{
 
 
 
-      // checkValidData(email.current.value,password.current.value)
-      // setErrorMessage(checkValidData)}
-      // if ((email.current && password.current && name.current) !== null) {
-      //   return (
-      //     console.log("email", email.current.value),
-      //     checkValidData(
-      //       email.current.value,
-      //       password.current.value,
-      //       name.current.value
-      //     ),
-      //      setErrorMessage(checkValidData)
-      //   )
-      // }else if(email.current.value){
-      //     return (checkValidData(email.current.value,password.current),
-      //     console.log("pass",password.current),
-      //    setErrorMessage(checkValidData))
 
-      // }else if(email.current.value&&password.current.value){
-      //     return (checkValidData(email.current.value,password.current.value),
-      //     console.log("I am second elseIf"))
-      // }
-      //  else {
-      //     checkValidData(email.current.value ,password.current.value)
-      //  return setErrorMessage(checkValidData);
-      // }
     
