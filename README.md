@@ -6,8 +6,9 @@
 ### Login form
 ### signUp form
 ### Form validation
-### useRef hook
-
+#### useRef hook
+#### firebase setup 
+#### deployijng our app to production
 
 # features
 ### login/sign up
@@ -26,3 +27,19 @@ movieSuggestion*N in horizontal scroll
 # netflix-gpt
 #### search bar
 #### movie suggestions
+
+
+### how to deploy your project on firebase
+command
+```
+firebase install
+firebase
+firebase login
+firebase init
+then configure this option to controll your project  () hosting:configure files for firebase Hosting and (optionally ) setup gitHub Link
+ques :what do you want to use as your public directory?build
+configure as a single-page app?no
+setUp automatic builds and deploy with GitHub?no
+npm run build
+firebase deploy
+```
