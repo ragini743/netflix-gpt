@@ -56,19 +56,22 @@ const Login = () => {
   if (password.current) password.current.value = "";
   };
   return (
-    <div className="">
+    <div className="relative ">
       <Header />
-      <div className="h-full">
+      <div className="h-full absolute top-0 bottom-0">
         <img
           src={Login_background_URL}
-          className=""
+          className="w-full h-full"
           alt="background-logo"
         ></img>
+        <div className="absolute inset-0 bg-black opacity-50">
+
+        </div>
       </div>
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="bg-black text-white p-2 flex flex-col top-5 mx-[30%] left-0 right-0 md:p-10 md:w-[40%] absolute md:top-24 opacity-80"
+        className="bg-black text-white px-2 flex flex-col top-5 mx-auto left-0 right-0 md:p-10 md:w-[40%] lg:w-[30%] relative md:top-20 opacity-80  mb-40  "
       >
         <thead className="p-1 md:font-bold md:text-2xl md:p-2">
           {isSignInForm ? "Sign In" : "signUp"}
@@ -116,12 +119,12 @@ const Login = () => {
             : "already ragistered sign In"}{" "}
           now.
         </p>
-        <p>
+        <p className="pb-40">
           This page is protected by Google reCAPTCHA to ensure you're not a bot.
           Learn more.
         </p>
       </form>
-      <footer className="relative -top-48 bg-black bg-opacity-70 text-white w-full py-6 px-10">
+      <footer className="relative bg-black bg-opacity-70 text-white w-full py-6 px-10 z-15 ">
         <div>
           <h2>Questions? Call 000-800-919-1694</h2>
           <ul>

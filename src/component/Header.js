@@ -2,9 +2,9 @@ import { NETFLIX_LOGO } from "../utils/constant";
 
 const Header =()=>{
     return(
-        <div>
-            <div className="w-[20%] absolute">
-                <img src={NETFLIX_LOGO} alt="Logo"></img>
+        <div className="relative w-[20%] z-10">
+            <div className=" ">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Logo"></img>
             </div>
         </div>
     )
