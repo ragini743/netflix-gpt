@@ -53,3 +53,48 @@ always use web modular API
 npm i -D @reduxjs/toolkit
 npm i react-redux
 ```
+
+### how to create a redux store?
+```
+import { configureStore } from "@reduxjs/toolkit";
+
+const appStore = configureStore({
+    reducer:{}
+})
+export default appStore ; 
+
+this  reducer have different reducers from  different slice 
+
+now we have to create a slice
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const userSlice = createSlice({
+    name:"user",
+    initialState :null ,
+    reducers:{
+        addUser:(state,action)=>{
+            return action.payload ;
+        } ,
+        removeUser:(state,action) =>{
+            return null;
+        }
+    }
+}) ;
+
+export const {addUser,removeUser} = userSlice.actions;
+
+export default userSlice.reducer ;
+
+
+
+now our previous appStore will update
+import { configureStore } from "@reduxjs/toolkit";
+
+const appStore = configureStore({
+    reducer:{ user:userReducer ,}
+})
+export default appStore ; 
+
+```
+
