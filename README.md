@@ -10,6 +10,9 @@
 #### firebase setup 
 #### deployijng our app to production
 #### create a signUp user account
+#### implement signIn user Api
+#### created Redux store with userSlice
+
 
 # features
 ### login/sign up
@@ -98,3 +101,7 @@ export default appStore ;
 
 ```
 
+
+### what is onAuthStateChanged ?
+it is used when there is auth changed.
+if user signedUp and signIn or SignOut
