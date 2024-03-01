@@ -2,11 +2,13 @@ import { useRef, useState } from "react";
 import { Login_background_URL } from "../utils/constant";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const dispatch =useDispatch();
   const [isSignInForm, setIsSignForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const name = useRef(null);
@@ -53,9 +55,20 @@ if(!errorMessage){
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        updateProfile(user ,{
+          displayName: name.current.value, photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
+        }).then(() => {
+          // Profile updated!
+          // ...
+          navigate("/browse")
+        }).catch((error) => {
+          // An error occurred
+          // ...
+          setErrorMessage(error.message)
+        });
         // ...
-        console.log("user",user)
-        navigate("/browse")
+      
+    
       })
       .catch((error) => {
         const errorCode = error.code;

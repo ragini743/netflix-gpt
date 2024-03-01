@@ -2,9 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { signOut } from "firebase/auth";
+import { useSelector } from "react-redux";
 
 const Browse =() =>{
     const navigate = useNavigate();
+    const user = useSelector(store=>store.user) ;
     const handleSignOut =() =>{
  console.log("click")
 signOut(auth).then(() => {
@@ -14,10 +16,11 @@ signOut(auth).then(() => {
   // An error happened.
   navigate("/error")
 });
+
     }
     return(
         <div className="shadow-lg py-2 relative ">
-            <div className="flex justify-between relative">
+            <div className="flex justify-between relative z-20">
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
                  <ul className="flex justify-evenly ">
@@ -31,13 +34,13 @@ signOut(auth).then(() => {
 
                 </div>
                 
-                 <div className="w-[16%] mr-10 flex justify-evenly items-center">
+                 {user?<div className="w-[16%] mr-10 flex justify-evenly items-center">
                     <div className="w-10">
-                    <img src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"alt="user Icon"></img>
+                    <img src={user.photoURL}alt="user Icon"></img>
                     </div>
                   
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>
-                </div>
+                </div>:null}
              </div> 
             <div className="absolute inset-0 bg-black opacity-50">
             </div>   
