@@ -48,3 +48,8 @@ firebase deploy
 
 ### how to create authentication
 always use web modular API
+### how to install redux?
+```
+npm i -D @reduxjs/toolkit
+npm i react-redux
+```
