@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { Login_background_URL } from "../utils/constant";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignForm] = useState(true);
@@ -15,9 +17,12 @@ const Login = () => {
   };
   const handleButtonClick = () => {
     // validate  the form data
-
+if(!errorMessage){
+  //signIn /signUp
+}
    // Validate the form data
    if (isSignInForm) {
+    //signIn Logic
     if (!email.current.value) {
       setErrorMessage("Email is not found");
       return;
@@ -27,6 +32,24 @@ const Login = () => {
       return;
     }
   } else {
+    //signUp logic
+
+    createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+        console.log("user",user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErrorMessage(errorCode +":"+ errorMessage)
+      });
+
+
+
+
     if (!name.current.value) {
       setErrorMessage("Name is required");
       return;
@@ -51,9 +74,9 @@ const Login = () => {
   }
   alert("your form is submitted")
   // Clear input fields
-  if (name.current) name.current.value = "";
-  if (email.current) email.current.value = "";
-  if (password.current) password.current.value = "";
+  // if (name.current) name.current.value = "";
+  // if (email.current) email.current.value = "";
+  // if (password.current) password.current.value = "";
   };
   return (
     <div className="relative ">

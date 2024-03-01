@@ -9,6 +9,7 @@
 #### useRef hook
 #### firebase setup 
 #### deployijng our app to production
+#### create a signUp user account
 
 # features
 ### login/sign up
@@ -43,3 +44,7 @@ setUp automatic builds and deploy with GitHub?no
 npm run build
 firebase deploy
 ```
+
+
+### how to create authentication
+always use web modular API
