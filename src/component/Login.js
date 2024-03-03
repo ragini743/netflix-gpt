@@ -59,15 +59,19 @@ if(!errorMessage){
         updateProfile(user ,{
           displayName: name.current.value, photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
         }).then(() => {
-          const {uid,email,displayName,photoURL} = auth.currentUser;
-          addUser({
-            uid:uid,
-            email:email,
-            displayName:displayName,
-            photoURL:photoURL,
-        })
-          // Profile updated!
+           // Profile updated!
           // ...
+          const {uid,email,displayName,photoURL} = auth.currentUser;
+          dispatch(
+            addUser({
+              uid:uid,
+              email:email,
+              displayName:displayName,
+              photoURL:photoURL,
+          })
+          )
+        
+         
           navigate("/browse")
         }).catch((error) => {
           // An error occurred
@@ -109,11 +113,7 @@ if(!errorMessage){
       // If all validations pass, clear any previous error messages
       setErrorMessage(null);
   }
-  alert("your form is submitted")
-  // Clear input fields
-  // if (name.current) name.current.value = "";
-  // if (email.current) email.current.value = "";
-  // if (password.current) password.current.value = "";
+ 
   };
   return (
     <div className="relative ">
