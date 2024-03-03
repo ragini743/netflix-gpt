@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const dispatch =useDispatch();
@@ -58,6 +59,13 @@ if(!errorMessage){
         updateProfile(user ,{
           displayName: name.current.value, photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
         }).then(() => {
+          const {uid,email,displayName,photoURL} = auth.currentUser;
+          addUser({
+            uid:uid,
+            email:email,
+            displayName:displayName,
+            photoURL:photoURL,
+        })
           // Profile updated!
           // ...
           navigate("/browse")

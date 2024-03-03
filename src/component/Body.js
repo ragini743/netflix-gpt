@@ -31,6 +31,14 @@ const Body = () =>{
             dispatch(addUser({uid:uid,email:email , displayName :displayName ,photoURL:photoURL}))
             // navigate("/browse")
             // ...
+            dispatch(
+                addUser({
+                    uid:uid,
+                    email:email,
+                    displayName:displayName,
+                    photoURL:photoURL,
+                })
+            )
           } else {
             // User is signed out
             // ...
