@@ -4,7 +4,7 @@ import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -15,7 +15,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate() ;
+  // const navigate = useNavigate() ;
 
   const toggleSignInForm = () => {
     setIsSignForm(!isSignInForm);
@@ -40,9 +40,27 @@ if(!errorMessage){
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // ...
-    console.log("uer1",user)
-    navigate("/browse")
+    updateProfile(user ,{  displayName: name.current.value,
+       photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
+    }).then(() => {
+       // Profile updated!
+   
+      const {uid,email,displayName,photoURL} = auth.currentUser;
+      
+      dispatch(
+        addUser({
+          uid:uid,
+          email:email,
+          displayName:displayName,
+          photoURL:photoURL,
+      })
+      )
+   
+    }).catch((error) => {
+      // An error occurred
+      // ...
+      setErrorMessage(error.message)
+    });
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -56,12 +74,14 @@ if(!errorMessage){
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        console.log("userCredential",userCredential.user)
         updateProfile(user ,{
           displayName: name.current.value, photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
         }).then(() => {
            // Profile updated!
-          // ...
+       
           const {uid,email,displayName,photoURL} = auth.currentUser;
+          
           dispatch(
             addUser({
               uid:uid,
@@ -72,7 +92,7 @@ if(!errorMessage){
           )
         
          
-          navigate("/browse")
+          // navigate("/browse")
         }).catch((error) => {
           // An error occurred
           // ...

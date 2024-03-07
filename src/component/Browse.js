@@ -7,11 +7,12 @@ import { useSelector } from "react-redux";
 const Browse =() =>{
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
+    console.log("user",user)
     const handleSignOut =() =>{
  console.log("click")
 signOut(auth).then(() => {
   // Sign-out successful.
-  navigate("/")
+//   navigate("/")
 }).catch((error) => {
   // An error happened.
   navigate("/error")
@@ -23,7 +24,7 @@ signOut(auth).then(() => {
             <div className="flex justify-between relative z-20">
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
-                 <ul className="flex justify-evenly ">
+                 <ul className="flex justify-evenly text-white font-bold">
                     <li className="ml-4">Home</li>
                     <li className="ml-4">TV shows</li>
                     <li className="ml-4">Movies</li>
@@ -37,6 +38,7 @@ signOut(auth).then(() => {
                  {user?<div className="w-[16%] mr-10 flex justify-evenly items-center">
                     <div className="w-10">
                     <img src={user.photoURL}alt="user Icon"></img>
+                    <span className="text-white">{user.displayName}</span>
                     </div>
                   
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>

@@ -12,6 +12,10 @@
 #### create a signUp user account
 #### implement signIn user Api
 #### created Redux store with userSlice
+#### implement signOut
+#### update profile
+#### fetch from tmdb Movies
+
 
 
 # features
