@@ -5,6 +5,7 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { NETFLIX_LOGO } from "../utils/constant";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const Header = () => {
     <div className="relative w-[25%] z-10">
       <div className=" pt-4">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+          src={NETFLIX_LOGO}
           alt="Logo"
         className="brightness-200"></img>
       </div>

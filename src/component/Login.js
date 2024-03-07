@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import { Login_background_URL } from "../utils/constant";
+import { Login_background_URL, USER_AVATAR } from "../utils/constant";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-// import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -40,8 +40,9 @@ if(!errorMessage){
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    console.log("createBrowserRouter",userCredential.user)
     updateProfile(user ,{  displayName: name.current.value,
-       photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
+       photoURL: USER_AVATAR
     }).then(() => {
        // Profile updated!
    
@@ -76,7 +77,7 @@ if(!errorMessage){
         const user = userCredential.user;
         console.log("userCredential",userCredential.user)
         updateProfile(user ,{
-          displayName: name.current.value, photoURL: "https://w7.pngwing.com/pngs/801/479/png-transparent-lord-krishna-illustration-krishna-janmashtami-radha-krishna-lord-krishna-text-logo-computer-wallpaper-thumbnail.png"
+          displayName: name.current.value, photoURL: USER_AVATAR
         }).then(() => {
            // Profile updated!
        

@@ -14,7 +14,10 @@
 #### created Redux store with userSlice
 #### implement signOut
 #### update profile
-#### fetch from tmdb Movies
+#### Bugfix :if sign up user displayName and profile Picture update
+#### BugFix: if user is not logged in Redirect/browse  to login page and vice-versa
+#### unsubscribed to the onTuthStateChanged callback
+#### add hardcoded value to the constants file .
 
 
 
@@ -28,6 +31,7 @@
 ##### ---trailer in background
 ##### --- title and description
 ##### --- movieSuggestions
+#### fetch from tmdb Movies
 ```
 movieSuggestion*N in horizontal scroll
 ```
