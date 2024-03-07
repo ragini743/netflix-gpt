@@ -3,10 +3,11 @@ import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
-import { options } from "../utils/constant";
-import { useEffect } from "react";
+import useNowPlyayingMovies from "./hooks/useNowPlyayingMovies";
+
 
 const Browse =() =>{
+useNowPlyayingMovies()
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
     // console.log("user",user)
@@ -22,15 +23,7 @@ signOut(auth).then(() => {
 
     }
 
-  const getNowPlayingMovies = async() =>{
-    const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
-    const json = await data.json()
-    console.log("jspn",json.results)
-  }
-
-  useEffect(() =>{
-    getNowPlayingMovies()
-  },[])
+ 
 
 
 
