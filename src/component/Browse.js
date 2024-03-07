@@ -3,11 +3,13 @@ import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
+import { options } from "../utils/constant";
+import { useEffect } from "react";
 
 const Browse =() =>{
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
-    console.log("user",user)
+    // console.log("user",user)
     const handleSignOut =() =>{
  console.log("click")
 signOut(auth).then(() => {
@@ -19,6 +21,19 @@ signOut(auth).then(() => {
 });
 
     }
+
+  const getNowPlayingMovies = async() =>{
+    const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options);
+    const json = await data.json()
+    console.log("jspn",json.results)
+  }
+
+  useEffect(() =>{
+    getNowPlayingMovies()
+  },[])
+
+
+
     return(
         <div className="shadow-lg py-2 relative ">
             <div className="flex justify-between relative z-20">

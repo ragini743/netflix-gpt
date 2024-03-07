@@ -18,6 +18,9 @@
 #### BugFix: if user is not logged in Redirect/browse  to login page and vice-versa
 #### unsubscribed to the onTuthStateChanged callback
 #### add hardcoded value to the constants file .
+#### ragister TMDB API & create an app & get access token 
+#### get data from TMDB now playing movies List API .
+
 
 
 
