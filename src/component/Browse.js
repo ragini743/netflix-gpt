@@ -28,8 +28,8 @@ signOut(auth).then(() => {
 
     return(
       <div>
-          <div className="shadow-lg py-2 relative ">
-            <div className="flex justify-between relative z-20">
+          <div className="shadow-lg py-2 relative h-[100%]">
+            <div className="flex justify-between relative z-20 ">
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
                  <ul className="flex justify-evenly text-white font-bold">
@@ -52,7 +52,7 @@ signOut(auth).then(() => {
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>
                 </div>:null}
              </div> 
-            <div className="absolute inset-0 bg-black opacity-50">
+            <div className="absolute inset-0 bg-black opacity-75">
             </div>   
           </div>
           <MainContainer />
