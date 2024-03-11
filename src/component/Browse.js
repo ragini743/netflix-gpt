@@ -3,7 +3,7 @@ import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
-import useNowPlayingMovies from "../hooks/useNowPlyayingMovies";
+import useNowPlayingMovies from "./hooks/useNowPlyayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 
@@ -27,12 +27,12 @@ signOut(auth).then(() => {
     }
 
     return(
-      <div>
-          <div className="shadow-lg py-2 relative h-[100%]">
-            <div className="flex justify-between relative z-20 ">
+      <div className="relative">
+          <div className="shadow-lg py-2  h-[100%] bg-opacity-50">
+            <div className="flex justify-between bg-transparent z-20 " >
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
-                 <ul className="flex justify-evenly text-white font-bold">
+                 <ul className="flex justify-evenly text-white font-bold z-10">
                     <li className="ml-4">Home</li>
                     <li className="ml-4">TV shows</li>
                     <li className="ml-4">Movies</li>
@@ -52,7 +52,7 @@ signOut(auth).then(() => {
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>
                 </div>:null}
              </div> 
-            <div className="absolute inset-0 bg-black opacity-75">
+            <div className="absolute inset-0 opacity-50 bg-black" >
             </div>   
           </div>
           <MainContainer />
