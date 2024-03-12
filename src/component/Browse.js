@@ -27,7 +27,7 @@ signOut(auth).then(() => {
     }
 
     return(
-      <div className="relative h-[100%] w-[100%]">
+      <div className="relative h-[100%] w-[100%] ">
           <div className=" py-2  h-[100%] z-20
            bg-gradient-to-b from-black to-transparent bg-opacity-50 relative">
             <div className="flex justify-between  " >
