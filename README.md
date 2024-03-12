@@ -20,6 +20,13 @@
 #### add hardcoded value to the constants file .
 #### ragister TMDB API & create an app & get access token 
 #### get data from TMDB now playing movies List API .
+#### custom hook for now playing MOvies
+#### create movieSlice
+#### update store with movies Data
+#### planning for mainContainer &secondary container
+#### fetch data for trailer video data
+#### embedded the youtube video and make it autoplay and mute 
+#### tailwind classes to make main container look awesome
 
 
 
