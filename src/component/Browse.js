@@ -27,9 +27,10 @@ signOut(auth).then(() => {
     }
 
     return(
-      <div className="relative">
-          <div className="shadow-lg py-2  h-[100%] bg-opacity-50">
-            <div className="flex justify-between bg-transparent z-20 " >
+      <div className="relative h-[100%] w-[100%]">
+          <div className=" py-2  h-[100%] z-20
+           bg-gradient-to-b from-black to-transparent bg-opacity-50 relative">
+            <div className="flex justify-between  " >
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
                  <ul className="flex justify-evenly text-white font-bold z-10">
@@ -43,7 +44,7 @@ signOut(auth).then(() => {
 
                 </div>
                 
-                 {user?<div className="w-[16%] mr-10 flex justify-evenly items-center">
+                 {user?<div className="w-[16%] mr-10 flex justify-evenly items-center relative z-10 bg-opacity-70  text-white">
                     <div className="w-10">
                     <img src={user.photoURL}alt="user Icon"></img>
                     <span className="text-white">{user.displayName}</span>
@@ -52,8 +53,8 @@ signOut(auth).then(() => {
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>
                 </div>:null}
              </div> 
-            <div className="absolute inset-0 opacity-50 bg-black" >
-            </div>   
+            {/* <div className="absolute inset-0 opacity-50 bg-black" >
+            </div>    */}
           </div>
           <MainContainer />
           <SecondaryContainer />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SecondaryContainer = () => {
   return (
-    <div>SecondaryContainer</div>
+    <div className=' font-bold z-[100] mt-20 relative text-white '>SecondaryContainer</div>
   )
 }
 
