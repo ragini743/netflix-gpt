@@ -31,6 +31,7 @@
 #### Build Movie List
 #### Build Movie card
 #### TMDB image cdn URL
+#### GPT search 
 
 
 
