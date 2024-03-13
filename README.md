@@ -27,6 +27,12 @@
 #### fetch data for trailer video data
 #### embedded the youtube video and make it autoplay and mute 
 #### tailwind classes to make main container look awesome
+#### Build secondary component
+#### Build Movie List
+#### Build Movie card
+#### TMDB image cdn URL
+
+
 
 
 

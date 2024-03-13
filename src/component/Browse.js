@@ -6,10 +6,14 @@ import { useSelector } from "react-redux";
 import useNowPlayingMovies from "./hooks/useNowPlyayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "./hooks/usePopularMovies";
+import useUpcomingMovies from "./hooks/useUpcomingMovies";
 
 
 const Browse =() =>{
- useNowPlayingMovies()
+ useNowPlayingMovies() ;
+ usePopularMovies() ;
+ useUpcomingMovies() ;
 
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
