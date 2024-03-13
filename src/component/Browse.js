@@ -8,12 +8,17 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "./hooks/usePopularMovies";
 import useUpcomingMovies from "./hooks/useUpcomingMovies";
+import useTrendingMovies from "./hooks/useTrendingMovies";
+import useTopRatedMovies from "./hooks/useTopRated";
 
 
 const Browse =() =>{
  useNowPlayingMovies() ;
  usePopularMovies() ;
  useUpcomingMovies() ;
+ useTrendingMovies() ;
+ useTopRatedMovies();
+ console.log("trending",useTrendingMovies())
 
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
