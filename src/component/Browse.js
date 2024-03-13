@@ -22,7 +22,7 @@ const Browse =() =>{
  useUpcomingMovies() ;
  useTrendingMovies() ;
  useTopRatedMovies();
- console.log("trending",useTrendingMovies())
+//  console.log("trending",useTrendingMovies())
 
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
@@ -43,7 +43,7 @@ signOut(auth).then(() => {
     }
 
     return(
-      <div className="relative h-[100%] w-[100%] overflow-hidden">
+      <div className={"relative w-[100%] overflow-hidden " + (showGptSearch?'h-[100vh]':"h-[100%]")}>
           <div className=" py-2  h-[100%] z-20
            bg-gradient-to-b from-black to-transparent bg-opacity-50 relative overflow-hidden">
             <div className="flex justify-between  " >
