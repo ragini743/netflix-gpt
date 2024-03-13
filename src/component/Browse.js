@@ -12,6 +12,7 @@ import useTrendingMovies from "./hooks/useTrendingMovies";
 import useTopRatedMovies from "./hooks/useTopRated";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import GptSearch from "./GptSearch";
+import { Supported_Language } from "../utils/constant";
 
 
 const Browse =() =>{
@@ -47,7 +48,7 @@ signOut(auth).then(() => {
           <div className=" py-2  h-[100%] z-20
            bg-gradient-to-b from-black to-transparent bg-opacity-50 relative overflow-hidden">
             <div className="flex justify-between  " >
-                <div className="flex justify-evenly w-[60%] items-center">
+                <div className="flex justify-evenly w-[70%] items-center">
                  <Header />
                  <ul className="flex justify-evenly text-white font-bold z-10">
                     <li className="ml-4">Home</li>
@@ -55,7 +56,18 @@ signOut(auth).then(() => {
                     <li className="ml-4">Movies</li>
                     <li className="ml-4">New & Popular</li>
                     <li className="ml-4">My List</li>
-                    <li className="ml-4">Browse By Language</li>
+                    <label for="language" className=" ml-4">Browse By Language</label>
+                    
+                      <select id="language" className="bg-transparent text-white border-2 border-gray-700 outline-none 
+                      ml-1 py-2 ">
+                        {
+                          Supported_Language.map((lang) =>(<option key={lang.identifier} value={lang.identifier} className="text-black">{lang.name}</option>))
+                        }
+                        
+                    
+                      </select>
+                 
+                    
                  </ul>
 
                 </div>
@@ -72,6 +84,7 @@ signOut(auth).then(() => {
                     </div>
                   
                     <button className="font-bold" onClick={handleSignOut}>Sign Out</button>
+                    
                 </div>:null}
              </div> 
             {/* <div className="absolute inset-0 opacity-50 bg-black" >
