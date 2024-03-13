@@ -27,9 +27,9 @@ signOut(auth).then(() => {
     }
 
     return(
-      <div className="relative h-[100%] w-[100%] ">
+      <div className="relative h-[100%] w-[100%] overflow-hidden">
           <div className=" py-2  h-[100%] z-20
-           bg-gradient-to-b from-black to-transparent bg-opacity-50 relative">
+           bg-gradient-to-b from-black to-transparent bg-opacity-50 relative overflow-hidden">
             <div className="flex justify-between  " >
                 <div className="flex justify-evenly w-[60%] items-center">
                  <Header />
