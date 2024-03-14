@@ -87,7 +87,7 @@ dispatch(changeLanguage(e.target.value))
                  {user?<div className="w-[20%] mr-10 flex justify-evenly items-center relative z-10 bg-opacity-70  text-white">
                   <div className="text-white bg-purple-800 rounded-lg" onClick={handleSearchClick}>
                     <button className="rounded-lg px-4 py-2">
-                      GPT search
+                      {showGptSearch?"home":"GPT search"}
                     </button>
                   </div>
                     <div className="w-10">

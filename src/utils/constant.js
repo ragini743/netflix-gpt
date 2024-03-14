@@ -20,3 +20,6 @@ export const options = {
     {identifier:"hindi",name:"hindi"},
     {identifier:"spanish",name:"spanish"},
   ]
+
+
+  export const OPENAI_key ="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"

@@ -31,7 +31,10 @@
 #### Build Movie List
 #### Build Movie card
 #### TMDB image cdn URL
-#### GPT search 
+#### GPT search page
+gpt search bar
+multi language feature inn our app
+integrate GPT search API
 
 
 
