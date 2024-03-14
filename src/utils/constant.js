@@ -16,7 +16,7 @@ export const options = {
   export const IMG_URL ="https://image.tmdb.org/t/p/w500/"
 
   export const Supported_Language = [
-    {identifier:"en",name:"english"},
-    {identifier:"Hindi",name:"hindi"},
+    {identifier:"english",name:"english"},
+    {identifier:"hindi",name:"hindi"},
     {identifier:"spanish",name:"spanish"},
   ]

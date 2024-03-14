@@ -13,6 +13,7 @@ import useTopRatedMovies from "./hooks/useTopRated";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import GptSearch from "./GptSearch";
 import { Supported_Language } from "../utils/constant";
+import { changeLanguage } from "../utils/configSlice";
 
 
 const Browse =() =>{
@@ -27,6 +28,7 @@ const Browse =() =>{
 
     const navigate = useNavigate();
     const user = useSelector(store=>store.user) ;
+  
  
     const handleSignOut =() =>{
  console.log("click")
@@ -42,6 +44,10 @@ signOut(auth).then(() => {
     const handleSearchClick = () =>{
        dispatch(toggleGptSearchView()) ;
     }
+    const handleLanguage =(e) =>{
+console.log("vlaue",e.target.value)
+dispatch(changeLanguage(e.target.value))
+    }
 
     return(
       <div className={"relative w-[100%] overflow-hidden " + (showGptSearch?'h-[100vh]':"h-[100%]")}>
@@ -50,22 +56,28 @@ signOut(auth).then(() => {
             <div className="flex justify-between  " >
                 <div className="flex justify-evenly w-[70%] items-center">
                  <Header />
-                 <ul className="flex justify-evenly text-white font-bold z-10">
+                 <ul className="flex justify-evenly items-center text-white font-bold z-10">
                     <li className="ml-4">Home</li>
                     <li className="ml-4">TV shows</li>
                     <li className="ml-4">Movies</li>
                     <li className="ml-4">New & Popular</li>
                     <li className="ml-4">My List</li>
-                    <label for="language" className=" ml-4">Browse By Language</label>
+                   
+                    {
+                      showGptSearch && <>
+                      <label for="language" className=" ml-4">Browse By Language
+                    </label>
                     
-                      <select id="language" className="bg-transparent text-white border-2 border-gray-700 outline-none 
-                      ml-1 py-2 ">
+                      <select id="language" className="bg-transparent text-white border-2 border-gray-700 rounded-md outline-none 
+                      ml-1 py-2 " onChange={handleLanguage}>
                         {
                           Supported_Language.map((lang) =>(<option key={lang.identifier} value={lang.identifier} className="text-black">{lang.name}</option>))
                         }
                         
                     
                       </select>
+                      </>
+                    }
                  
                     
                  </ul>
