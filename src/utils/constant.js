@@ -22,5 +22,3 @@ export const options = {
   ]
 
 
-  // export const OPENAI_key ="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"
-  // export const OPENAI_key ="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"

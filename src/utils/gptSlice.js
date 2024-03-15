@@ -3,8 +3,10 @@ import { ActionCodeOperation } from "firebase/auth";
 
 const gptSlice = createSlice({
     name: "gpt",
+
     initialState:{
-        showGptSearch:false
+        showGptSearch:false ,
+        gptMoviesSearch:null,
     },
     reducers:{
         toggleGptSearchView:(state,action) =>{
