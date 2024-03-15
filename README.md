@@ -35,6 +35,7 @@
 gpt search bar
 multi language feature inn our app
 integrate GPT search API
+install npm install --save openai
 
 
 

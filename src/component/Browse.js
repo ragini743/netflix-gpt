@@ -65,7 +65,7 @@ dispatch(changeLanguage(e.target.value))
                    
                     {
                       showGptSearch && <>
-                      <label for="language" className=" ml-4">Browse By Language
+                      <label htmlFor="language" className=" ml-4">Browse By Language
                     </label>
                     
                       <select id="language" className="bg-transparent text-white border-2 border-gray-700 rounded-md outline-none 
