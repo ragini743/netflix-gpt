@@ -33,13 +33,14 @@ const GptSeaarchBar = () => {
     console.log(gptResults.choices?.[0]?.message?.content);
     const gptMovies = gptResults.choices?.message?.content.split(",")
 
-    // gptMovies =["koi mil gya","raone" ,"siya k ram"]
+  //  const gptMovies =["koi mil gya"," raone " ,"siya k ram"]
     // for each movie I 'll search TMDB api
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie))
     //  for each iteration we get a promise
     const tmdbResults = await promiseArray.all(promiseArray)
     console.log("tmdb",tmdbResults)
     dispatch(addGptMoviesResults({movieName:gptMovies,movieResult:tmdbResults}))
+    // dispatch(addGptMoviesResults({movieName:gptMovies,movieResult:gptMovies}))
 
   
     }

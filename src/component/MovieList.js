@@ -3,7 +3,8 @@ import MovieCard from './MovieCard'
 
 const MovieList = ({title,movies}) => {
     // console.log("movies",movies)
-    if(movies===null) return ;
+    if(title===null) return null ;
+    if(movies===null) return null;
   return (
     <div className='relative z-[200] '>
        <h1 className='pl-4 text-xl py-4 text-white'>{title}</h1>
@@ -15,4 +16,4 @@ const MovieList = ({title,movies}) => {
   )
 }
 
-export default MovieList
+export default MovieList;
