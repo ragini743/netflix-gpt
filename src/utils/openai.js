@@ -2,11 +2,6 @@ import OpenAI from 'openai';
 // import 'dotenv/config';
 import { OPENAI_key } from './constant';
 
-// require('dotenv').config();
-// 
-// const secretKey = process.env.OPENAI_key;
-
-// console.log("secret",secretKey)
 
 
  export const openai = new OpenAI({
