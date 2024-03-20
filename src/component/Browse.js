@@ -71,8 +71,8 @@ const Browse = () => {
         className=" py-2  h-[100%] z-20
            bg-gradient-to-b from-black to-transparent bg-opacity-50 relative overflow-hidden"
       >
-        <div className="flex justify-between md:justify-between items-center align-baseline ">
-          <div className="w-[40%] flex justify-evenly md:w-[70%]  items-center">
+        <div className="flex justify-between md:justify-between md:items-center pt-4">
+          <div className="w-[40%] flex justify-evenly md:w-[70%]   relative">
             <Header />
             <ul className="md:flex justify-evenly items-center text-white font-bold z-10 hidden">
               <li className="ml-4">Home</li>
@@ -106,22 +106,22 @@ const Browse = () => {
                 </>
               )}
             </ul>
-            <div className="flex flex-col z-10 md:hidden " onClick={showOption}>
-              <div className="w-6">
+            <div className="flex flex-col z-10 md:hidden justify-between items-center ">
+              <div className="w-6"  onClick={showOption}>
                 <img src={optionIcon} alt=""></img>
               </div>
 
               {optionState.option && (
-                <ul className="md:flex justify-evenly items-center text-white z-10 text-xs">
-                  <li className="ml-4">Home</li>
-                  <li className="ml-4">TV shows</li>
-                  <li className="ml-4">Movies</li>
-                  <li className="ml-4">New & Popular</li>
-                  <li className="ml-4">My List</li>
+                <ul className="flex  flex-col md:flex-row md:justify-evenly items-center mx-auto  z-1000 text-white">
+                  <li className="">Home</li>
+                  <li className="">TV shows</li>
+                  <li className="">Movies</li>
+                  <li className="">New & Popular</li>
+                  <li className="">My List</li>
 
                   {showGptSearch && (
                     <>
-                      <label htmlFor="language" className=" ml-4">
+                      <label htmlFor="language" className=" ml-4 ">
                         Browse By Language
                       </label>
 
@@ -151,21 +151,21 @@ const Browse = () => {
           {user ? (
             <div className="w-[50%] md:w-[20%] md:mr-10 flex justify-evenly items-center relative z-10 bg-opacity-70  text-white">
               <div
-                className="text-white rounded-sm bg-purple-800 md:rounded-lg"
+                className="text-white rounded-sm bg-purple-800 md:rounded-lg absolute top-0 left-0"
                 onClick={handleSearchClick}
               >
                 <button className="md:rounded-lg rounded-sm px-1 py:1 text-sm md:px-4 md:py-2">
                   {showGptSearch ? "home" : "GPT search"}
                 </button>
               </div>
-              <div className="w-6 md:w-10 " onClick={showUserName}>
+              <div className="w-6 md:w-10 absolute top-0  " onClick={showUserName}>
                 <img src={user.photoURL} alt="user Icon"></img>
                 {optionState.userName && (
                   <span className="text-white text-xs">{user.displayName}</span>
                 )}
               </div>
 
-              <button className="font-bold text-sm " onClick={handleSignOut}>
+              <button className="font-bold text-sm  absolute top-0 right-2 " onClick={handleSignOut}>
                 Sign Out
               </button>
             </div>

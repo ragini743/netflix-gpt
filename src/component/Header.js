@@ -35,8 +35,8 @@ const Header = () => {
     });
   }, []);
   return (
-    <div className="relative w-[50%] md:w-[25%] z-10 my-auto flex items-center ">
-      <div className="flex items-center">
+    <div className="relative w-[80%] md:w-[25%] z-10 flex items-center ">
+      <div className="flex items-center absolute top-1">
         <img
           src={NETFLIX_LOGO}
           alt="Logo"
