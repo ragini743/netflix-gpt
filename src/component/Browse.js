@@ -68,7 +68,7 @@ const Browse = () => {
       }
     >
       <div
-        className=" py-2  h-[100%] z-20
+        className=" py-2  md:h-[200px]] z-20
            bg-gradient-to-b from-black to-transparent bg-opacity-50 relative overflow-hidden"
       >
         <div className="flex justify-between md:justify-between md:items-center pt-4">
@@ -112,7 +112,7 @@ const Browse = () => {
               </div>
 
               {optionState.option && (
-                <ul className="flex  flex-col md:flex-row md:justify-evenly items-center mx-auto  z-1000 text-white">
+                <ul className="flex  flex-col md:flex-row md:justify-evenly items-center mx-auto  z-1000  p-1 text-xs md:text-sm bg-white text-black">
                   <li className="">Home</li>
                   <li className="">TV shows</li>
                   <li className="">Movies</li>
