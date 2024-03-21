@@ -8,7 +8,7 @@ const SecondaryContainer = () => {
     if(movies===null) return;
   return (
     <div className=' font-bold  bg-black'>
-        <div className='z-[100]  relative  -mt-32 pl-8'>
+        <div className='z-[100]  relative  md:-mt-32 md:pl-8 pl-4 -mt-4'>
             <MovieList title = {"Now Playing"} movies={movies.nowPlayingMovies} />
             <MovieList title = {"Top Rated"} movies={movies.topRatedMovies} />
             <MovieList title = {"Upcoming"} movies={movies.upcomingMovies} />
