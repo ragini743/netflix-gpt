@@ -138,7 +138,8 @@ if(!errorMessage){
   };
   return (
     <div className="relative ">
-      <Header />
+      <div className="w-[40%] ml-4"> <Header /></div>
+     
       <div className="h-full absolute top-0 bottom-0">
         <img
           src={Login_background_URL}
@@ -152,7 +153,7 @@ if(!errorMessage){
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="bg-black text-white px-2 flex flex-col top-5 mx-auto left-0 right-0 md:p-10 md:w-[40%] lg:w-[30%] relative md:top-20 opacity-80  mb-40  "
+        className="bg-black text-white px-2 flex flex-col top-16 mx-auto left-0 right-0 md:p-10 md:w-[40%] lg:w-[30%] relative md:top-20 opacity-80  mb-40  "
       >
         <thead className="p-1 md:font-bold md:text-2xl md:p-2 md:pt-8">
           {isSignInForm ? "Sign In" : "signUp"}
@@ -162,7 +163,7 @@ if(!errorMessage){
             ref={name}
             type="text"
             placeholder="enter your name"
-            className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2 rounded-sm  bg-stone-800"
+            className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 p-2 rounded-sm  bg-stone-800"
           ></input>
         )}
 
@@ -170,18 +171,18 @@ if(!errorMessage){
           ref={email}
           type="email"
           placeholder="Email or phone number"
-          className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2 rounded-sm  bg-stone-800"
+          className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 p-2 rounded-sm  bg-stone-800"
         ></input>
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 md:p-2  rounded-sm bg-stone-800"
+          className="border-2 outline-none border-black mb-2 text-sm md:text-lg md:mb-4 p-2  rounded-sm bg-stone-800"
         ></input>
         <p className="mb-2 text-red-500 font-bold">{errorMessage}</p>
         <button
           type="submit"
-          className="border-black border-1 bg-red-600 md:p-2 md:mb-4"
+          className="border-black border-1 bg-red-600 p-2 md:mb-4"
           onClick={handleButtonClick}
         >
           {isSignInForm ? "Sign In" : "signUp"}

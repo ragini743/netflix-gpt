@@ -48,14 +48,14 @@ const GptSeaarchBar = () => {
    
     // console.log("lang",langSelector)
   return (
-    <div className={'w-[90%] lg:w-[40%] mx-auto z-[1000] relative '+(!optionState.option?"-top-[80vh]": "-top-[20vh]")} >
-        <form className='flex items-center'onSubmit={(e) =>e.preventDefault()}>
-            <div className='border-gray-700 border-2 rounded-md w-[100%] mr-4'>
+    <div className={'w-[90%] lg:w-[50%] mx-auto z-[1000] relative '+(!optionState.option?"-top-[80vh]": "-top-[20vh]")} >
+        <form className='flex  items-stretch'onSubmit={(e) =>e.preventDefault()}>
+            <div className='border-gray-700 border-2 rounded-md w-[80%] mr-4'>
                 <input type='text' ref={searchText} placeholder={lang[langSelector].gptSearchPlaceholder} className='outline-none w-full p-2 rounded-md text-xs md:text-[1.5rem]'></input>
 
             </div>
-            <div className='bg-red-600 text-white rounded-md' onClick={handleGptSearchClick}>
-                <button type='button' className='p-2 rounded-md text-xs md:text-[1.5rem]'>{lang[langSelector].search}</button>
+            <div className='bg-red-600 text-white rounded-md w-[20%] flex justify-center items-center' onClick={handleGptSearchClick}>
+                <button type='button' className='p-2 rounded-md text-xs md:text-[1.5rem] '>{lang[langSelector].search}</button>
             </div>
         </form>
     </div>
