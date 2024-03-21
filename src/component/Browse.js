@@ -151,7 +151,7 @@ const Browse = () => {
           {user ? (
             <div className="w-[50%] md:w-[20%] md:mr-10 flex justify-evenly items-center relative z-10 bg-opacity-70  text-white">
               <div
-                className="text-white rounded-sm bg-purple-800 md:rounded-lg absolute top-0 left-0"
+                className={"text-white rounded-sm bg-purple-800 md:rounded-lg absolute top-0 " + (showGptSearch?"left-0": "-left-4")}
                 onClick={handleSearchClick}
               >
                 <button className="md:rounded-lg rounded-sm px-1 py:1 text-sm md:px-4 md:py-2">

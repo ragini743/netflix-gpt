@@ -7,7 +7,7 @@ const MovieList = ({title,movies}) => {
     if(movies===null) return null;
   return (
     <div className='relative z-[200] '>
-       <h1 className='pl-4 text-xl py-4 text-white'>{title}</h1>
+       <h1 className='pl-2 md:pl-4 text-lg md:text-xl py-2  md:py-4 text-white'>{title}</h1>
        <div className={'flex overflow-x-scroll pt-2 scrollbar' }>
          {movies.map((movie) => <MovieCard key={movie.id} posterPath = {movie.poster_path} />)}
       
